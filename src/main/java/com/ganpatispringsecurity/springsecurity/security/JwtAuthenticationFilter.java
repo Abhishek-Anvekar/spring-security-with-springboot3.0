@@ -75,7 +75,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             Boolean validateToken = this.jwtHelper.validateToken(token, userDetails); // this will validate token by comparing username from token and userDetails
 
             if (validateToken) {
-                //set the authentication
+                //set Authentication in security context holder
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authentication);
