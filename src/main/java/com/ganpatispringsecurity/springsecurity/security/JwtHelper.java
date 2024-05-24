@@ -22,9 +22,9 @@ public class JwtHelper {
     * 5*60*60 = sec
     * 5*60*60 *1000= millisecond
     * */
-//    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60; // while generating token we multiply by 1000. i.e total 5 hour
+    public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60; // while generating token we multiply by 1000. i.e total 5 hour
 
-        public static final long JWT_TOKEN_VALIDITY =  50;  // 50*1000 = 50 sec
+//        public static final long JWT_TOKEN_VALIDITY =  50;  // 50*1000 = 50 sec
     private String secret = "afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf";
 
     //retrieve username from jwt token

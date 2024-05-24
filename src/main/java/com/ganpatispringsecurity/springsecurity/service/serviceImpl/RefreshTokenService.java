@@ -18,8 +18,8 @@ public class RefreshTokenService {
     @Autowired
     private UserRepository userRepository;
 
-//    public long refreshTokenValidity= 5*60*60*1000;
-    public long refreshTokenValidity= 2*60*1000; // for 2 min - to check refresh token expiring or not
+    public long refreshTokenValidity= 5*60*60*1000;
+//    public long refreshTokenValidity= 2*60*1000; // for 2 min - to check refresh token expiring or not
 
     public RefreshToken createRefreshToken(String username){
         User user = userRepository.findByEmail(username).get();
