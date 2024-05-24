@@ -32,6 +32,7 @@ public class UserController {
         return new ResponseEntity<>(userService.getUserById(userId),HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{userId}")
     ResponseEntity<UserDto> updateUserById(@PathVariable long userId, @RequestBody UserDto userDto){
         return new ResponseEntity<>(userService.updateUserById(userId,userDto),HttpStatus.OK);
