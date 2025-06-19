@@ -45,6 +45,12 @@ public class JwtHelper {
     //for retrieveing any information from token we will need the secret key
     private Claims getAllClaimsFromToken(String token) {
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+        //        return Jwts.parser().setSigningKey(secret).build().parseClaimsJws(token).getPayload(); // changes in jwt 0.12.5
+        
+        // changes in jwt 1.0.0 release currently we are using 0.11.5. this changes are for future update
+//        SignatureAlgorithm hs512 = SignatureAlgorithm.HS512;
+//        SecretKeySpec secretKeySpec = new SecretKeySpec(secret.getBytes(),hs512.getJcaName());
+//        return Jwts.parser().setSigningKey(secretKeySpec).build().parseClaimsJws(token).getPayload();
     }
 
     //check if the token has expired
