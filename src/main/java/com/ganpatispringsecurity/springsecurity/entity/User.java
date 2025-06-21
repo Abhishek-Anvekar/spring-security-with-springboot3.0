@@ -26,6 +26,11 @@ public class User implements UserDetails {
     private String email;
     private String password;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private Set<Role> roles = new HashSet<>();
     @OneToOne(mappedBy = "user")
     @JsonIgnore // @JsonIgnore is only used to Ignore a marked field from being serialized, de-serialized to and from JSON
